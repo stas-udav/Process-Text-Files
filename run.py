@@ -16,3 +16,8 @@ for files in feedback_list : # Create dict w feedback content
         feedback_dict ={"title": content_list[0], "name": content_list[1], "date": content_list[2], "feedback": content_list[3]}
         feedback_all.append(feedback_dict) #add dict to feedback dict list
 print (feedback_all)
+response = request.post(http://<corpweb-external-IP>/feedback, json=feedback_all)
+if  200<= response.status_code <= 299:
+    print("success", response.status_code)
+else :
+    print("Error", response.status_code)
